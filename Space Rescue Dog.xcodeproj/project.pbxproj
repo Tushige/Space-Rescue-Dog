@@ -1,0 +1,488 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BB162BCA19953896002E2095 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB162BC919953896002E2095 /* Foundation.framework */; };
+		BB162BCC19953896002E2095 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB162BCB19953896002E2095 /* CoreGraphics.framework */; };
+		BB162BCE19953896002E2095 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB162BCD19953896002E2095 /* UIKit.framework */; };
+		BB162BD019953896002E2095 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB162BCF19953896002E2095 /* SpriteKit.framework */; };
+		BB162BD619953896002E2095 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB162BD419953896002E2095 /* InfoPlist.strings */; };
+		BB162BD819953896002E2095 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB162BD719953896002E2095 /* main.m */; };
+		BB162BDC19953896002E2095 /* TKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB162BDB19953896002E2095 /* TKAppDelegate.m */; };
+		BB162BDF19953896002E2095 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB162BDD19953896002E2095 /* Main.storyboard */; };
+		BB162BE219953896002E2095 /* TKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB162BE119953896002E2095 /* TKViewController.m */; };
+		BB162BE519953896002E2095 /* TKMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BB162BE419953896002E2095 /* TKMyScene.m */; };
+		BB162BE719953896002E2095 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = BB162BE619953896002E2095 /* Spaceship.png */; };
+		BB162BE919953896002E2095 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB162BE819953896002E2095 /* Images.xcassets */; };
+		BB162BF019953896002E2095 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB162BEF19953896002E2095 /* XCTest.framework */; };
+		BB162BF119953896002E2095 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB162BC919953896002E2095 /* Foundation.framework */; };
+		BB162BF219953896002E2095 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB162BCD19953896002E2095 /* UIKit.framework */; };
+		BB162BFA19953896002E2095 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB162BF819953896002E2095 /* InfoPlist.strings */; };
+		BB162BFC19953896002E2095 /* Space_Rescue_DogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BB162BFB19953896002E2095 /* Space_Rescue_DogTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BB162BF319953896002E2095 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB162BBE19953896002E2095 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB162BC519953896002E2095;
+			remoteInfo = "Space Rescue Dog";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BB162BC619953896002E2095 /* Space Rescue Dog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Rescue Dog.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB162BC919953896002E2095 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BB162BCB19953896002E2095 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BB162BCD19953896002E2095 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BB162BCF19953896002E2095 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		BB162BD319953896002E2095 /* Space Rescue Dog-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Space Rescue Dog-Info.plist"; sourceTree = "<group>"; };
+		BB162BD519953896002E2095 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BB162BD719953896002E2095 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BB162BD919953896002E2095 /* Space Rescue Dog-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Space Rescue Dog-Prefix.pch"; sourceTree = "<group>"; };
+		BB162BDA19953896002E2095 /* TKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKAppDelegate.h; sourceTree = "<group>"; };
+		BB162BDB19953896002E2095 /* TKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKAppDelegate.m; sourceTree = "<group>"; };
+		BB162BDE19953896002E2095 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BB162BE019953896002E2095 /* TKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKViewController.h; sourceTree = "<group>"; };
+		BB162BE119953896002E2095 /* TKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKViewController.m; sourceTree = "<group>"; };
+		BB162BE319953896002E2095 /* TKMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKMyScene.h; sourceTree = "<group>"; };
+		BB162BE419953896002E2095 /* TKMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKMyScene.m; sourceTree = "<group>"; };
+		BB162BE619953896002E2095 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		BB162BE819953896002E2095 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BB162BEE19953896002E2095 /* Space Rescue DogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Space Rescue DogTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB162BEF19953896002E2095 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		BB162BF719953896002E2095 /* Space Rescue DogTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Space Rescue DogTests-Info.plist"; sourceTree = "<group>"; };
+		BB162BF919953896002E2095 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BB162BFB19953896002E2095 /* Space_Rescue_DogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Space_Rescue_DogTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BB162BC319953896002E2095 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB162BCC19953896002E2095 /* CoreGraphics.framework in Frameworks */,
+				BB162BCE19953896002E2095 /* UIKit.framework in Frameworks */,
+				BB162BD019953896002E2095 /* SpriteKit.framework in Frameworks */,
+				BB162BCA19953896002E2095 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB162BEB19953896002E2095 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB162BF019953896002E2095 /* XCTest.framework in Frameworks */,
+				BB162BF219953896002E2095 /* UIKit.framework in Frameworks */,
+				BB162BF119953896002E2095 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BB162BBD19953896002E2095 = {
+			isa = PBXGroup;
+			children = (
+				BB162BD119953896002E2095 /* Space Rescue Dog */,
+				BB162BF519953896002E2095 /* Space Rescue DogTests */,
+				BB162BC819953896002E2095 /* Frameworks */,
+				BB162BC719953896002E2095 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BB162BC719953896002E2095 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BB162BC619953896002E2095 /* Space Rescue Dog.app */,
+				BB162BEE19953896002E2095 /* Space Rescue DogTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BB162BC819953896002E2095 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BB162BC919953896002E2095 /* Foundation.framework */,
+				BB162BCB19953896002E2095 /* CoreGraphics.framework */,
+				BB162BCD19953896002E2095 /* UIKit.framework */,
+				BB162BCF19953896002E2095 /* SpriteKit.framework */,
+				BB162BEF19953896002E2095 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BB162BD119953896002E2095 /* Space Rescue Dog */ = {
+			isa = PBXGroup;
+			children = (
+				BB162BDA19953896002E2095 /* TKAppDelegate.h */,
+				BB162BDB19953896002E2095 /* TKAppDelegate.m */,
+				BB162BDD19953896002E2095 /* Main.storyboard */,
+				BB162BE019953896002E2095 /* TKViewController.h */,
+				BB162BE119953896002E2095 /* TKViewController.m */,
+				BB162BE319953896002E2095 /* TKMyScene.h */,
+				BB162BE419953896002E2095 /* TKMyScene.m */,
+				BB162BE619953896002E2095 /* Spaceship.png */,
+				BB162BE819953896002E2095 /* Images.xcassets */,
+				BB162BD219953896002E2095 /* Supporting Files */,
+			);
+			path = "Space Rescue Dog";
+			sourceTree = "<group>";
+		};
+		BB162BD219953896002E2095 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BB162BD319953896002E2095 /* Space Rescue Dog-Info.plist */,
+				BB162BD419953896002E2095 /* InfoPlist.strings */,
+				BB162BD719953896002E2095 /* main.m */,
+				BB162BD919953896002E2095 /* Space Rescue Dog-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BB162BF519953896002E2095 /* Space Rescue DogTests */ = {
+			isa = PBXGroup;
+			children = (
+				BB162BFB19953896002E2095 /* Space_Rescue_DogTests.m */,
+				BB162BF619953896002E2095 /* Supporting Files */,
+			);
+			path = "Space Rescue DogTests";
+			sourceTree = "<group>";
+		};
+		BB162BF619953896002E2095 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BB162BF719953896002E2095 /* Space Rescue DogTests-Info.plist */,
+				BB162BF819953896002E2095 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BB162BC519953896002E2095 /* Space Rescue Dog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB162BFF19953896002E2095 /* Build configuration list for PBXNativeTarget "Space Rescue Dog" */;
+			buildPhases = (
+				BB162BC219953896002E2095 /* Sources */,
+				BB162BC319953896002E2095 /* Frameworks */,
+				BB162BC419953896002E2095 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Space Rescue Dog";
+			productName = "Space Rescue Dog";
+			productReference = BB162BC619953896002E2095 /* Space Rescue Dog.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BB162BED19953896002E2095 /* Space Rescue DogTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB162C0219953896002E2095 /* Build configuration list for PBXNativeTarget "Space Rescue DogTests" */;
+			buildPhases = (
+				BB162BEA19953896002E2095 /* Sources */,
+				BB162BEB19953896002E2095 /* Frameworks */,
+				BB162BEC19953896002E2095 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB162BF419953896002E2095 /* PBXTargetDependency */,
+			);
+			name = "Space Rescue DogTests";
+			productName = "Space Rescue DogTests";
+			productReference = BB162BEE19953896002E2095 /* Space Rescue DogTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BB162BBE19953896002E2095 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TK;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Tuke Entertainment";
+				TargetAttributes = {
+					BB162BED19953896002E2095 = {
+						TestTargetID = BB162BC519953896002E2095;
+					};
+				};
+			};
+			buildConfigurationList = BB162BC119953896002E2095 /* Build configuration list for PBXProject "Space Rescue Dog" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BB162BBD19953896002E2095;
+			productRefGroup = BB162BC719953896002E2095 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BB162BC519953896002E2095 /* Space Rescue Dog */,
+				BB162BED19953896002E2095 /* Space Rescue DogTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BB162BC419953896002E2095 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB162BD619953896002E2095 /* InfoPlist.strings in Resources */,
+				BB162BE919953896002E2095 /* Images.xcassets in Resources */,
+				BB162BE719953896002E2095 /* Spaceship.png in Resources */,
+				BB162BDF19953896002E2095 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB162BEC19953896002E2095 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB162BFA19953896002E2095 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BB162BC219953896002E2095 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB162BE219953896002E2095 /* TKViewController.m in Sources */,
+				BB162BE519953896002E2095 /* TKMyScene.m in Sources */,
+				BB162BD819953896002E2095 /* main.m in Sources */,
+				BB162BDC19953896002E2095 /* TKAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB162BEA19953896002E2095 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB162BFC19953896002E2095 /* Space_Rescue_DogTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BB162BF419953896002E2095 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB162BC519953896002E2095 /* Space Rescue Dog */;
+			targetProxy = BB162BF319953896002E2095 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BB162BD419953896002E2095 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB162BD519953896002E2095 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BB162BDD19953896002E2095 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB162BDE19953896002E2095 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BB162BF819953896002E2095 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB162BF919953896002E2095 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BB162BFD19953896002E2095 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BB162BFE19953896002E2095 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BB162C0019953896002E2095 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Space Rescue Dog/Space Rescue Dog-Prefix.pch";
+				INFOPLIST_FILE = "Space Rescue Dog/Space Rescue Dog-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BB162C0119953896002E2095 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Space Rescue Dog/Space Rescue Dog-Prefix.pch";
+				INFOPLIST_FILE = "Space Rescue Dog/Space Rescue Dog-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		BB162C0319953896002E2095 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Space Rescue Dog.app/Space Rescue Dog";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Space Rescue Dog/Space Rescue Dog-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Space Rescue DogTests/Space Rescue DogTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		BB162C0419953896002E2095 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Space Rescue Dog.app/Space Rescue Dog";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Space Rescue Dog/Space Rescue Dog-Prefix.pch";
+				INFOPLIST_FILE = "Space Rescue DogTests/Space Rescue DogTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BB162BC119953896002E2095 /* Build configuration list for PBXProject "Space Rescue Dog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB162BFD19953896002E2095 /* Debug */,
+				BB162BFE19953896002E2095 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB162BFF19953896002E2095 /* Build configuration list for PBXNativeTarget "Space Rescue Dog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB162C0019953896002E2095 /* Debug */,
+				BB162C0119953896002E2095 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BB162C0219953896002E2095 /* Build configuration list for PBXNativeTarget "Space Rescue DogTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB162C0319953896002E2095 /* Debug */,
+				BB162C0419953896002E2095 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BB162BBE19953896002E2095 /* Project object */;
+}
