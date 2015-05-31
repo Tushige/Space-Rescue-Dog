@@ -14,16 +14,40 @@
 		BB162BD619953896002E2095 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB162BD419953896002E2095 /* InfoPlist.strings */; };
 		BB162BD819953896002E2095 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB162BD719953896002E2095 /* main.m */; };
 		BB162BDC19953896002E2095 /* TKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB162BDB19953896002E2095 /* TKAppDelegate.m */; };
-		BB162BDF19953896002E2095 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB162BDD19953896002E2095 /* Main.storyboard */; };
 		BB162BE219953896002E2095 /* TKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB162BE119953896002E2095 /* TKViewController.m */; };
-		BB162BE519953896002E2095 /* TKMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BB162BE419953896002E2095 /* TKMyScene.m */; };
-		BB162BE719953896002E2095 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = BB162BE619953896002E2095 /* Spaceship.png */; };
 		BB162BE919953896002E2095 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB162BE819953896002E2095 /* Images.xcassets */; };
 		BB162BF019953896002E2095 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB162BEF19953896002E2095 /* XCTest.framework */; };
 		BB162BF119953896002E2095 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB162BC919953896002E2095 /* Foundation.framework */; };
 		BB162BF219953896002E2095 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB162BCD19953896002E2095 /* UIKit.framework */; };
 		BB162BFA19953896002E2095 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB162BF819953896002E2095 /* InfoPlist.strings */; };
 		BB162BFC19953896002E2095 /* Space_Rescue_DogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BB162BFB19953896002E2095 /* Space_Rescue_DogTests.m */; };
+		BB162C0A199539D6002E2095 /* TKUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BB162C09199539D6002E2095 /* TKUtil.m */; };
+		BB162C0D19953A03002E2095 /* TKStepNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BB162C0C19953A03002E2095 /* TKStepNode.m */; };
+		BB162C1019953A16002E2095 /* TKCollectablesNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BB162C0F19953A16002E2095 /* TKCollectablesNode.m */; };
+		BB162C1419953A52002E2095 /* TKMeteoritesNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BB162C1319953A52002E2095 /* TKMeteoritesNode.m */; };
+		BB162C1719953A63002E2095 /* TKScrollingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BB162C1619953A63002E2095 /* TKScrollingNode.m */; };
+		BB162C1B19953A90002E2095 /* TKHudNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BB162C1A19953A90002E2095 /* TKHudNode.m */; };
+		BB162C2519953B09002E2095 /* TKGameData.m in Sources */ = {isa = PBXBuildFile; fileRef = BB162C2419953B09002E2095 /* TKGameData.m */; };
+		BB162C2819953B2F002E2095 /* TKMainCharacterNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BB162C2719953B2F002E2095 /* TKMainCharacterNode.m */; };
+		BB162C2B19953B9C002E2095 /* TKGameplayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BB162C2A19953B9C002E2095 /* TKGameplayScene.m */; };
+		BB162C2F19953BF1002E2095 /* TKGameOverNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BB162C2E19953BF1002E2095 /* TKGameOverNode.m */; };
+		BB162C3919953C1A002E2095 /* Gameplay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB162C3319953C1A002E2095 /* Gameplay.mp3 */; };
+		BB162C3A19953C1A002E2095 /* Intro.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB162C3419953C1A002E2095 /* Intro.mp3 */; };
+		BB162C4219953C3F002E2095 /* ExplosionFire.sks in Resources */ = {isa = PBXBuildFile; fileRef = BB162C3E19953C3F002E2095 /* ExplosionFire.sks */; };
+		BB162C4319953C3F002E2095 /* Smoke.png in Resources */ = {isa = PBXBuildFile; fileRef = BB162C3F19953C3F002E2095 /* Smoke.png */; };
+		BB162C4419953C3F002E2095 /* Smoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = BB162C4019953C3F002E2095 /* Smoke.sks */; };
+		BB162C4519953C3F002E2095 /* Spark.sks in Resources */ = {isa = PBXBuildFile; fileRef = BB162C4119953C3F002E2095 /* Spark.sks */; };
+		BB162C4C19953C9D002E2095 /* TKTitleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BB162C4B19953C9D002E2095 /* TKTitleScene.m */; };
+		BB162C4E1995D79A002E2095 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB162C4D1995D79A002E2095 /* AVFoundation.framework */; };
+		BB162CB01999249C002E2095 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB162CAF1999249C002E2095 /* GameKit.framework */; };
+		BB162CB71999ABE7002E2095 /* sceneSwitch.caf in Resources */ = {isa = PBXBuildFile; fileRef = BB162CB31999A6EF002E2095 /* sceneSwitch.caf */; };
+		BB162CB81999ABE7002E2095 /* GameoverSound.caf in Resources */ = {isa = PBXBuildFile; fileRef = BB162CB61999A70A002E2095 /* GameoverSound.caf */; };
+		BB162CB91999ABE7002E2095 /* takeOff.caf in Resources */ = {isa = PBXBuildFile; fileRef = BB162CB51999A6F9002E2095 /* takeOff.caf */; };
+		BB162CBA1999ABE7002E2095 /* collectSound.caf in Resources */ = {isa = PBXBuildFile; fileRef = BB162CB41999A6F4002E2095 /* collectSound.caf */; };
+		BB162CBC1999AD81002E2095 /* Explode.caf in Resources */ = {isa = PBXBuildFile; fileRef = BB162CBB1999AD6F002E2095 /* Explode.caf */; };
+		BB298DEC19A4FB7B004C1B5F /* TKLogosNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BB298DEB19A4FB7B004C1B5F /* TKLogosNode.m */; };
+		BB298DEE19A58B39004C1B5F /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BB298DED19A58B39004C1B5F /* sprites.atlas */; };
+		BB298DF119A68E2D004C1B5F /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB298DF019A68E2D004C1B5F /* iAd.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,15 +75,51 @@
 		BB162BDE19953896002E2095 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BB162BE019953896002E2095 /* TKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKViewController.h; sourceTree = "<group>"; };
 		BB162BE119953896002E2095 /* TKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKViewController.m; sourceTree = "<group>"; };
-		BB162BE319953896002E2095 /* TKMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKMyScene.h; sourceTree = "<group>"; };
-		BB162BE419953896002E2095 /* TKMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKMyScene.m; sourceTree = "<group>"; };
-		BB162BE619953896002E2095 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		BB162BE819953896002E2095 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BB162BEE19953896002E2095 /* Space Rescue DogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Space Rescue DogTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB162BEF19953896002E2095 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		BB162BF719953896002E2095 /* Space Rescue DogTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Space Rescue DogTests-Info.plist"; sourceTree = "<group>"; };
 		BB162BF919953896002E2095 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BB162BFB19953896002E2095 /* Space_Rescue_DogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Space_Rescue_DogTests.m; sourceTree = "<group>"; };
+		BB162C08199539D6002E2095 /* TKUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKUtil.h; sourceTree = "<group>"; };
+		BB162C09199539D6002E2095 /* TKUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKUtil.m; sourceTree = "<group>"; };
+		BB162C0B19953A03002E2095 /* TKStepNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKStepNode.h; sourceTree = "<group>"; };
+		BB162C0C19953A03002E2095 /* TKStepNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKStepNode.m; sourceTree = "<group>"; };
+		BB162C0E19953A16002E2095 /* TKCollectablesNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCollectablesNode.h; sourceTree = "<group>"; };
+		BB162C0F19953A16002E2095 /* TKCollectablesNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCollectablesNode.m; sourceTree = "<group>"; };
+		BB162C1219953A52002E2095 /* TKMeteoritesNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMeteoritesNode.h; sourceTree = "<group>"; };
+		BB162C1319953A52002E2095 /* TKMeteoritesNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMeteoritesNode.m; sourceTree = "<group>"; };
+		BB162C1519953A63002E2095 /* TKScrollingNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKScrollingNode.h; sourceTree = "<group>"; };
+		BB162C1619953A63002E2095 /* TKScrollingNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKScrollingNode.m; sourceTree = "<group>"; };
+		BB162C1919953A90002E2095 /* TKHudNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKHudNode.h; sourceTree = "<group>"; };
+		BB162C1A19953A90002E2095 /* TKHudNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKHudNode.m; sourceTree = "<group>"; };
+		BB162C2319953B09002E2095 /* TKGameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGameData.h; sourceTree = "<group>"; };
+		BB162C2419953B09002E2095 /* TKGameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGameData.m; sourceTree = "<group>"; };
+		BB162C2619953B2F002E2095 /* TKMainCharacterNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMainCharacterNode.h; sourceTree = "<group>"; };
+		BB162C2719953B2F002E2095 /* TKMainCharacterNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMainCharacterNode.m; sourceTree = "<group>"; };
+		BB162C2919953B9C002E2095 /* TKGameplayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGameplayScene.h; sourceTree = "<group>"; };
+		BB162C2A19953B9C002E2095 /* TKGameplayScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGameplayScene.m; sourceTree = "<group>"; };
+		BB162C2D19953BF1002E2095 /* TKGameOverNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGameOverNode.h; sourceTree = "<group>"; };
+		BB162C2E19953BF1002E2095 /* TKGameOverNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGameOverNode.m; sourceTree = "<group>"; };
+		BB162C3319953C1A002E2095 /* Gameplay.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Gameplay.mp3; sourceTree = "<group>"; };
+		BB162C3419953C1A002E2095 /* Intro.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Intro.mp3; sourceTree = "<group>"; };
+		BB162C3E19953C3F002E2095 /* ExplosionFire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ExplosionFire.sks; sourceTree = "<group>"; };
+		BB162C3F19953C3F002E2095 /* Smoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Smoke.png; sourceTree = "<group>"; };
+		BB162C4019953C3F002E2095 /* Smoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Smoke.sks; sourceTree = "<group>"; };
+		BB162C4119953C3F002E2095 /* Spark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Spark.sks; sourceTree = "<group>"; };
+		BB162C4A19953C9D002E2095 /* TKTitleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTitleScene.h; sourceTree = "<group>"; };
+		BB162C4B19953C9D002E2095 /* TKTitleScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTitleScene.m; sourceTree = "<group>"; };
+		BB162C4D1995D79A002E2095 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BB162CAF1999249C002E2095 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		BB162CB31999A6EF002E2095 /* sceneSwitch.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sceneSwitch.caf; sourceTree = "<group>"; };
+		BB162CB41999A6F4002E2095 /* collectSound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = collectSound.caf; sourceTree = "<group>"; };
+		BB162CB51999A6F9002E2095 /* takeOff.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = takeOff.caf; sourceTree = "<group>"; };
+		BB162CB61999A70A002E2095 /* GameoverSound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GameoverSound.caf; sourceTree = "<group>"; };
+		BB162CBB1999AD6F002E2095 /* Explode.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Explode.caf; sourceTree = "<group>"; };
+		BB298DEA19A4FB7B004C1B5F /* TKLogosNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKLogosNode.h; sourceTree = "<group>"; };
+		BB298DEB19A4FB7B004C1B5F /* TKLogosNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKLogosNode.m; sourceTree = "<group>"; };
+		BB298DED19A58B39004C1B5F /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
+		BB298DF019A68E2D004C1B5F /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +127,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB298DF119A68E2D004C1B5F /* iAd.framework in Frameworks */,
+				BB162C4E1995D79A002E2095 /* AVFoundation.framework in Frameworks */,
 				BB162BCC19953896002E2095 /* CoreGraphics.framework in Frameworks */,
 				BB162BCE19953896002E2095 /* UIKit.framework in Frameworks */,
+				BB162CB01999249C002E2095 /* GameKit.framework in Frameworks */,
 				BB162BD019953896002E2095 /* SpriteKit.framework in Frameworks */,
 				BB162BCA19953896002E2095 /* Foundation.framework in Frameworks */,
 			);
@@ -91,8 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				BB162BD119953896002E2095 /* Space Rescue Dog */,
-				BB162BF519953896002E2095 /* Space Rescue DogTests */,
 				BB162BC819953896002E2095 /* Frameworks */,
+				BB162BF519953896002E2095 /* Space Rescue DogTests */,
 				BB162BC719953896002E2095 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -109,6 +172,9 @@
 		BB162BC819953896002E2095 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BB298DF019A68E2D004C1B5F /* iAd.framework */,
+				BB162CAF1999249C002E2095 /* GameKit.framework */,
+				BB162C4D1995D79A002E2095 /* AVFoundation.framework */,
 				BB162BC919953896002E2095 /* Foundation.framework */,
 				BB162BCB19953896002E2095 /* CoreGraphics.framework */,
 				BB162BCD19953896002E2095 /* UIKit.framework */,
@@ -121,14 +187,18 @@
 		BB162BD119953896002E2095 /* Space Rescue Dog */ = {
 			isa = PBXGroup;
 			children = (
-				BB162BDA19953896002E2095 /* TKAppDelegate.h */,
-				BB162BDB19953896002E2095 /* TKAppDelegate.m */,
+				BB298DED19A58B39004C1B5F /* sprites.atlas */,
+				BB298DCC19A3C12E004C1B5F /* Game Center */,
+				BB162C06199539AF002E2095 /* scenes */,
+				BB162C2C19953BE7002E2095 /* Game over */,
+				BB162C2219953B00002E2095 /* Game Data */,
+				BB162C05199539A7002E2095 /* sprites */,
+				BB162C1819953A7D002E2095 /* HUD */,
+				BB162C1119953A28002E2095 /* Scrolling Background */,
+				BB162C07199539B6002E2095 /* constants */,
+				BB162C3019953BFE002E2095 /* Music/sound efx */,
+				BB162C3D19953C1F002E2095 /* special efx */,
 				BB162BDD19953896002E2095 /* Main.storyboard */,
-				BB162BE019953896002E2095 /* TKViewController.h */,
-				BB162BE119953896002E2095 /* TKViewController.m */,
-				BB162BE319953896002E2095 /* TKMyScene.h */,
-				BB162BE419953896002E2095 /* TKMyScene.m */,
-				BB162BE619953896002E2095 /* Spaceship.png */,
 				BB162BE819953896002E2095 /* Images.xcassets */,
 				BB162BD219953896002E2095 /* Supporting Files */,
 			);
@@ -138,6 +208,10 @@
 		BB162BD219953896002E2095 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BB162BE019953896002E2095 /* TKViewController.h */,
+				BB162BE119953896002E2095 /* TKViewController.m */,
+				BB162BDA19953896002E2095 /* TKAppDelegate.h */,
+				BB162BDB19953896002E2095 /* TKAppDelegate.m */,
 				BB162BD319953896002E2095 /* Space Rescue Dog-Info.plist */,
 				BB162BD419953896002E2095 /* InfoPlist.strings */,
 				BB162BD719953896002E2095 /* main.m */,
@@ -162,6 +236,111 @@
 				BB162BF819953896002E2095 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BB162C05199539A7002E2095 /* sprites */ = {
+			isa = PBXGroup;
+			children = (
+				BB162C2619953B2F002E2095 /* TKMainCharacterNode.h */,
+				BB162C2719953B2F002E2095 /* TKMainCharacterNode.m */,
+				BB162C1219953A52002E2095 /* TKMeteoritesNode.h */,
+				BB162C1319953A52002E2095 /* TKMeteoritesNode.m */,
+				BB162C0E19953A16002E2095 /* TKCollectablesNode.h */,
+				BB162C0F19953A16002E2095 /* TKCollectablesNode.m */,
+				BB162C0B19953A03002E2095 /* TKStepNode.h */,
+				BB162C0C19953A03002E2095 /* TKStepNode.m */,
+			);
+			name = sprites;
+			sourceTree = "<group>";
+		};
+		BB162C06199539AF002E2095 /* scenes */ = {
+			isa = PBXGroup;
+			children = (
+				BB162C4A19953C9D002E2095 /* TKTitleScene.h */,
+				BB162C4B19953C9D002E2095 /* TKTitleScene.m */,
+				BB162C2919953B9C002E2095 /* TKGameplayScene.h */,
+				BB162C2A19953B9C002E2095 /* TKGameplayScene.m */,
+			);
+			name = scenes;
+			sourceTree = "<group>";
+		};
+		BB162C07199539B6002E2095 /* constants */ = {
+			isa = PBXGroup;
+			children = (
+				BB162C08199539D6002E2095 /* TKUtil.h */,
+				BB162C09199539D6002E2095 /* TKUtil.m */,
+			);
+			name = constants;
+			sourceTree = "<group>";
+		};
+		BB162C1119953A28002E2095 /* Scrolling Background */ = {
+			isa = PBXGroup;
+			children = (
+				BB162C1519953A63002E2095 /* TKScrollingNode.h */,
+				BB162C1619953A63002E2095 /* TKScrollingNode.m */,
+			);
+			name = "Scrolling Background";
+			sourceTree = "<group>";
+		};
+		BB162C1819953A7D002E2095 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				BB162C1919953A90002E2095 /* TKHudNode.h */,
+				BB162C1A19953A90002E2095 /* TKHudNode.m */,
+			);
+			name = HUD;
+			sourceTree = "<group>";
+		};
+		BB162C2219953B00002E2095 /* Game Data */ = {
+			isa = PBXGroup;
+			children = (
+				BB162C2319953B09002E2095 /* TKGameData.h */,
+				BB162C2419953B09002E2095 /* TKGameData.m */,
+			);
+			name = "Game Data";
+			sourceTree = "<group>";
+		};
+		BB162C2C19953BE7002E2095 /* Game over */ = {
+			isa = PBXGroup;
+			children = (
+				BB162C2D19953BF1002E2095 /* TKGameOverNode.h */,
+				BB162C2E19953BF1002E2095 /* TKGameOverNode.m */,
+			);
+			name = "Game over";
+			sourceTree = "<group>";
+		};
+		BB162C3019953BFE002E2095 /* Music/sound efx */ = {
+			isa = PBXGroup;
+			children = (
+				BB162CB31999A6EF002E2095 /* sceneSwitch.caf */,
+				BB162CB61999A70A002E2095 /* GameoverSound.caf */,
+				BB162CBB1999AD6F002E2095 /* Explode.caf */,
+				BB162CB51999A6F9002E2095 /* takeOff.caf */,
+				BB162CB41999A6F4002E2095 /* collectSound.caf */,
+				BB162C3319953C1A002E2095 /* Gameplay.mp3 */,
+				BB162C3419953C1A002E2095 /* Intro.mp3 */,
+			);
+			name = "Music/sound efx";
+			sourceTree = "<group>";
+		};
+		BB162C3D19953C1F002E2095 /* special efx */ = {
+			isa = PBXGroup;
+			children = (
+				BB162C3E19953C3F002E2095 /* ExplosionFire.sks */,
+				BB162C3F19953C3F002E2095 /* Smoke.png */,
+				BB162C4019953C3F002E2095 /* Smoke.sks */,
+				BB162C4119953C3F002E2095 /* Spark.sks */,
+			);
+			name = "special efx";
+			sourceTree = "<group>";
+		};
+		BB298DCC19A3C12E004C1B5F /* Game Center */ = {
+			isa = PBXGroup;
+			children = (
+				BB298DEA19A4FB7B004C1B5F /* TKLogosNode.h */,
+				BB298DEB19A4FB7B004C1B5F /* TKLogosNode.m */,
+			);
+			name = "Game Center";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +391,14 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Tuke Entertainment";
 				TargetAttributes = {
+					BB162BC519953896002E2095 = {
+						DevelopmentTeam = RAPZRR6X8A;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
+					};
 					BB162BED19953896002E2095 = {
 						TestTargetID = BB162BC519953896002E2095;
 					};
@@ -241,10 +428,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB162CBC1999AD81002E2095 /* Explode.caf in Resources */,
+				BB162CB71999ABE7002E2095 /* sceneSwitch.caf in Resources */,
+				BB162CB81999ABE7002E2095 /* GameoverSound.caf in Resources */,
+				BB162CB91999ABE7002E2095 /* takeOff.caf in Resources */,
+				BB162CBA1999ABE7002E2095 /* collectSound.caf in Resources */,
+				BB162C4219953C3F002E2095 /* ExplosionFire.sks in Resources */,
 				BB162BD619953896002E2095 /* InfoPlist.strings in Resources */,
+				BB162C4419953C3F002E2095 /* Smoke.sks in Resources */,
+				BB162C4519953C3F002E2095 /* Spark.sks in Resources */,
+				BB298DEE19A58B39004C1B5F /* sprites.atlas in Resources */,
 				BB162BE919953896002E2095 /* Images.xcassets in Resources */,
-				BB162BE719953896002E2095 /* Spaceship.png in Resources */,
-				BB162BDF19953896002E2095 /* Main.storyboard in Resources */,
+				BB162C3A19953C1A002E2095 /* Intro.mp3 in Resources */,
+				BB162C3919953C1A002E2095 /* Gameplay.mp3 in Resources */,
+				BB162C4319953C3F002E2095 /* Smoke.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,10 +460,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB162C0A199539D6002E2095 /* TKUtil.m in Sources */,
+				BB162C1419953A52002E2095 /* TKMeteoritesNode.m in Sources */,
+				BB162C2519953B09002E2095 /* TKGameData.m in Sources */,
+				BB162C4C19953C9D002E2095 /* TKTitleScene.m in Sources */,
+				BB162C2819953B2F002E2095 /* TKMainCharacterNode.m in Sources */,
+				BB162C2F19953BF1002E2095 /* TKGameOverNode.m in Sources */,
 				BB162BE219953896002E2095 /* TKViewController.m in Sources */,
-				BB162BE519953896002E2095 /* TKMyScene.m in Sources */,
 				BB162BD819953896002E2095 /* main.m in Sources */,
 				BB162BDC19953896002E2095 /* TKAppDelegate.m in Sources */,
+				BB162C0D19953A03002E2095 /* TKStepNode.m in Sources */,
+				BB162C1B19953A90002E2095 /* TKHudNode.m in Sources */,
+				BB298DEC19A4FB7B004C1B5F /* TKLogosNode.m in Sources */,
+				BB162C1719953A63002E2095 /* TKScrollingNode.m in Sources */,
+				BB162C1019953A16002E2095 /* TKCollectablesNode.m in Sources */,
+				BB162C2B19953B9C002E2095 /* TKGameplayScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,10 +599,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Tushig Ochirkhuyag (9BT558E2W9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Tushig Ochirkhuyag (9BT558E2W9)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Space Rescue Dog/Space Rescue Dog-Prefix.pch";
 				INFOPLIST_FILE = "Space Rescue Dog/Space Rescue Dog-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1398cf94-d8b5-444f-9206-f67babda3373";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -405,10 +617,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Tushig Ochirkhuyag (RAPZRR6X8A)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Tushig Ochirkhuyag (RAPZRR6X8A)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Space Rescue Dog/Space Rescue Dog-Prefix.pch";
 				INFOPLIST_FILE = "Space Rescue Dog/Space Rescue Dog-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1398cf94-d8b5-444f-9206-f67babda3373";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -418,6 +634,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Space Rescue Dog.app/Space Rescue Dog";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -440,6 +657,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Space Rescue Dog.app/Space Rescue Dog";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -473,6 +691,7 @@
 				BB162C0119953896002E2095 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BB162C0219953896002E2095 /* Build configuration list for PBXNativeTarget "Space Rescue DogTests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +700,7 @@
 				BB162C0419953896002E2095 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
