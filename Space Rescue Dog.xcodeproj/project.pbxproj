@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19E1DA1B1B1EB5F00002312B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB162BDD19953896002E2095 /* Main.storyboard */; };
 		BB162BCA19953896002E2095 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB162BC919953896002E2095 /* Foundation.framework */; };
 		BB162BCC19953896002E2095 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB162BCB19953896002E2095 /* CoreGraphics.framework */; };
 		BB162BCE19953896002E2095 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB162BCD19953896002E2095 /* UIKit.framework */; };
@@ -434,6 +435,7 @@
 				BB162CB91999ABE7002E2095 /* takeOff.caf in Resources */,
 				BB162CBA1999ABE7002E2095 /* collectSound.caf in Resources */,
 				BB162C4219953C3F002E2095 /* ExplosionFire.sks in Resources */,
+				19E1DA1B1B1EB5F00002312B /* Main.storyboard in Resources */,
 				BB162BD619953896002E2095 /* InfoPlist.strings in Resources */,
 				BB162C4419953C3F002E2095 /* Smoke.sks in Resources */,
 				BB162C4519953C3F002E2095 /* Spark.sks in Resources */,
