@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19ACE0B81B1FA9780085486F /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19ACE0B71B1FA9780085486F /* Launch Screen.xib */; };
 		19E1DA1B1B1EB5F00002312B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB162BDD19953896002E2095 /* Main.storyboard */; };
 		BB162BCA19953896002E2095 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB162BC919953896002E2095 /* Foundation.framework */; };
 		BB162BCC19953896002E2095 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB162BCB19953896002E2095 /* CoreGraphics.framework */; };
@@ -62,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19ACE0B71B1FA9780085486F /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		BB162BC619953896002E2095 /* Space Rescue Dog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Rescue Dog.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB162BC919953896002E2095 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BB162BCB19953896002E2095 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -202,6 +204,7 @@
 				BB162BDD19953896002E2095 /* Main.storyboard */,
 				BB162BE819953896002E2095 /* Images.xcassets */,
 				BB162BD219953896002E2095 /* Supporting Files */,
+				19ACE0B71B1FA9780085486F /* Launch Screen.xib */,
 			);
 			path = "Space Rescue Dog";
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				BB298DEE19A58B39004C1B5F /* sprites.atlas in Resources */,
 				BB162BE919953896002E2095 /* Images.xcassets in Resources */,
 				BB162C3A19953C1A002E2095 /* Intro.mp3 in Resources */,
+				19ACE0B81B1FA9780085486F /* Launch Screen.xib in Resources */,
 				BB162C3919953C1A002E2095 /* Gameplay.mp3 in Resources */,
 				BB162C4319953C3F002E2095 /* Smoke.png in Resources */,
 			);

@@ -97,7 +97,7 @@
         self.complementLabel.fontSize = 18;
         
         //setup the anchor point of the scene
-        self.anchorPoint = CGPointMake(0.5, 0.5);
+        self.anchorPoint = CGPointMake(0.5 , 0.5);
         
         //initialize an object of gameData
         self.gameData = [TKGameData sharedGameData];
@@ -265,6 +265,7 @@
 -(void)didBeginContact:(SKPhysicsContact *)contact
 {
     SKPhysicsBody *firstBody, *secondBody;
+    CGPoint collidedAt;
     //first body will always have the lower value of TKCollisionCategory
     if(contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask)
     {
@@ -276,15 +277,15 @@
         firstBody = contact.bodyB;
         secondBody = contact.bodyA;
     }
+    collidedAt = CGPointMake(contact.contactPoint.x - self.frame.size.width/2.0, contact.contactPoint.y - self.frame.size.height/2.0);
     //character collides with meteorite
     if(firstBody.categoryBitMask == TKCollisionCategoryCharacter && secondBody.categoryBitMask == TKCollisionCategoryMeteorite)
     {
-       // TKMainCharacterNode *character= (TKMainCharacterNode *)firstBody.node;
         TKMeteoritesNode *meteorite = (TKMeteoritesNode *)secondBody.node;
         [meteorite removeFromParent];
         //[character removeFromParent];
-        [self createExplosion:contact.contactPoint];
-        [self createSmoke:contact.contactPoint];
+        [self createExplosion:collidedAt];
+        [self createSmoke:collidedAt];
         [self loseLife];
         [self runAction:self.explodeSFX];
     }
@@ -293,12 +294,12 @@
     {
         TKCollectablesNode *collectable = (TKCollectablesNode *)secondBody.node;
         [collectable removeFromParent];
-        [self performAnimationPoints:contact.contactPoint];
+        [self performAnimationPoints:collidedAt];
         self.numberOfCollectablesCollected+=TKPoints;
         [self addPoints:TKPoints];
         
         //shows complement message on the screen depending on how many rescues have been made
-        [self showComplement:contact.contactPoint];
+        [self showComplement:collidedAt];
         
         //play sound effect
         [self runAction:self.collectSFX];
@@ -495,7 +496,6 @@
     
     //sets explosion's position to be = position of debris
     explosion.position = position;
-    
     //display the explosion
     [self addChild:explosion];
     
@@ -590,6 +590,8 @@
 #pragma mark - complements
 -(void)showComplement:(CGPoint)position
 {
+    //change position since anchor point of label is different than character
+    //position = CGPointMake(position.x-self.frame.size.width/2, position.y-self.frame.size.height/2);
     if(self.numberOfCollectablesCollected == 1)
     {
         [self performAnimationFirstSave:position];
@@ -691,6 +693,7 @@
     SKAction *wait = [SKAction waitForDuration:1.0];
     SKAction *sequence = [SKAction sequence:@[scaleUp, fade, wait]];
     [self addChild:self.complementLabel];
+    
     [self.complementLabel runAction:sequence completion:^{
         [self.complementLabel removeFromParent];
     }];
