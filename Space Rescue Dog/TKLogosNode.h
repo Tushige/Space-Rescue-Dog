@@ -11,7 +11,7 @@
 @interface TKLogosNode : SKSpriteNode
 
 +(instancetype) LogoAtPosition:(CGPoint) position;
--(void)addLabel:(CGPoint)position andName:(NSString *)name andText:(NSString *)text;
+-(void)addLabel:(CGPoint)position andName:(NSString *)name andText:(NSString *)text andFontSize:(int)fontSize;
 @property(nonatomic)SKLabelNode* label;
 
 @end

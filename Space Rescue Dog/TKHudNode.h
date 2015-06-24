@@ -13,9 +13,8 @@
 @property(nonatomic)NSInteger lives;
 @property(nonatomic)NSInteger score;
 @property(nonatomic)NSInteger bestScore;
-+(instancetype)hudAtPosition:(CGPoint)position inFrame:(CGRect) frame;
++(instancetype)hudAtPosition:(CGPoint)position inFrame:(CGRect) frame andScoreFont:(int)scoreFont andOffset:(int)offset;
 -(void)addPoints:(NSInteger)points;
 -(void)LoseLife;
 -(BOOL)isGameOver;
-
 @end

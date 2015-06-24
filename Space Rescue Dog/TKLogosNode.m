@@ -16,13 +16,17 @@
     Logo.position = position;
     return Logo;
 }
--(void)addLabel:(CGPoint)position andName:(NSString *)name andText:(NSString *)text
+-(void)addLabel:(CGPoint)position andName:(NSString *)name andText:(NSString *)text andFontSize:(int)fontSize
 {
     self.label = [SKLabelNode labelNodeWithFontNamed:@"Futura-CondensedExtrabol"];
     self.label.name = name;
     self.label.text  = text;
     self.label.fontColor = [UIColor blackColor];
-    self.label.fontSize = 32;
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self.label.fontSize = 64;
+    } else {
+        self.label.fontSize = 32;
+    }
     self.label.position = position;
     [self addChild:self.label];
 }

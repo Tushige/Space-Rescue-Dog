@@ -29,38 +29,38 @@
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
-        //set the background image
-        NSString* imageName;
-        if(self.frame.size.height > 500 )
-        {
-            imageName = @"titleBackground_A";
-        }
-        else{
-            imageName = @"titleBackground_B";
-        }
-        self.background = [SKSpriteNode spriteNodeWithImageNamed:imageName];
+        self.background = [SKSpriteNode spriteNodeWithImageNamed:@"titleBackground"];
         self.anchorPoint = CGPointMake(0.5,0.5);
         //set background image position
         self.background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
         [self addChild:self.background];
-        [self showPlayLabel];
-        [self showBestScore];
+        
+        if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            [self showPlayLabel:TK_LABEL_PAD];
+            [self showBestScore:TK_TITLE_PAD];
+            [self showRankLabel:TK_LABEL_PAD];
+        }
+        else {
+            [self showPlayLabel:TK_LABEL_PHONE];
+            [self showBestScore:TK_TITLE_PHONE];
+            [self showRankLabel:TK_LABEL_PHONE];
+        }
         [self soundSetup];
         [self addAstronaut];
-        [self showRankLabel];
     }
     return self;
 }
--(void)showPlayLabel
+-(void)showPlayLabel:(int)fontSize
 {
     self.playLogo = [TKLogosNode LogoAtPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
-    [self.playLogo addLabel:CGPointMake(CGRectGetMidX(self.frame), self.playLogo.position.y + self.playLogo.frame.size.height / 12.0) andName:@"play" andText:@"PLAY"];
+    [self.playLogo addLabel:CGPointMake(CGRectGetMidX(self.frame), self.playLogo.position.y + self.playLogo.frame.size.height / 12.0) andName:@"play" andText:@"PLAY" andFontSize:fontSize];
+
     [self addChild:self.playLogo];
 }
--(void)showRankLabel
+-(void)showRankLabel:(int)fontSize
 {
     self.rankLogo = [TKLogosNode LogoAtPosition:CGPointMake(CGRectGetMidX(self.frame), self.playLogo.position.y - self.playLogo.frame.size.height / 0.5)];
-    [self.rankLogo addLabel:CGPointMake(CGRectGetMidX(self.frame), - CGRectGetMidY(self.frame) + self.rankLogo.frame.size.height/12.0) andName:@"rank" andText:@"RANK"];
+    [self.rankLogo addLabel:CGPointMake(CGRectGetMidX(self.frame), - CGRectGetMidY(self.frame) + self.rankLogo.frame.size.height/12.0) andName:@"rank" andText:@"RANK" andFontSize:fontSize];
     [self addChild:self.rankLogo];
 }
 
@@ -117,8 +117,10 @@
             }];
         }];
     }
+    // if rank button was pressed, show rank in game center
     else if([node.name isEqualToString:@"rank"])
     {
+        // user logged in to game center
         if ([GKLocalPlayer localPlayer].authenticated)
         {
             // Get the default leaderboard identifier.
@@ -135,7 +137,7 @@
                  }
              }];
         }
-        //if user is not logged in
+        // user not logged in to game center
         else
         {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"user is not logged in to Game Center" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
@@ -157,7 +159,7 @@
         }
     }
 }
--(void)showBestScore
+-(void)showBestScore:(int)fontSize
 {
     SKAction *showBestScore = [SKAction runBlock:^{
         SKLabelNode *bestScoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Futura-CondensedExtraBold"];
@@ -170,8 +172,10 @@
             self.scoreText = [NSString stringWithFormat:@"High Score: %ld rescues", (long)[TKGameData sharedGameData].bestScore];
         }
         bestScoreLabel.text = self.scoreText;
-        bestScoreLabel.fontSize = 16;
-        bestScoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), self.rankLogo.position.y - self.rankLogo.frame.size.height / 0.5);
+
+        bestScoreLabel.fontSize = fontSize;
+
+        bestScoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), (self.titleCollectable.position.y + self.titleCollectable.frame.size.height/2.0 + self.rankLogo.position.y)/2.0 );
         [self addChild:bestScoreLabel];
     }];
     [self runAction:showBestScore];

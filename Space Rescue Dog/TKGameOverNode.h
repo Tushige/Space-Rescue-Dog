@@ -10,7 +10,7 @@
 
 @interface TKGameOverNode : SKNode
 
-+(instancetype)gameOverAtPosition:(CGPoint)position;
++(instancetype)gameOverAtPosition:(CGPoint)position andFontSize:(int)fontSize;
 -(void)performAnimation:(NSInteger)score andBestScore:(NSInteger)bestScore;
 
 @end

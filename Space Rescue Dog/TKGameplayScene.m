@@ -93,24 +93,9 @@
         self.turnedRight = NO;
         self.noTurn = NO;
         
-        //sets the complement font size
-        self.complementLabel.fontSize = 18;
-        
         //setup the anchor point of the scene
         self.anchorPoint = CGPointMake(0.5 , 0.5);
         
-        //initialize an object of gameData
-        self.gameData = [TKGameData sharedGameData];
-        
-        //add background
-        [self addBackground];
-        
-        //add the HUD
-        [self addHUD];
-        
-        //add astronaut
-        [self addMainCharacter];
-
         //game scene physicsWorld setup
         self.physicsWorld.gravity = CGVectorMake(0, 0);
         
@@ -118,27 +103,49 @@
         self.physicsWorld.contactDelegate = self;
         
         self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
-       
-        //initializes the motion manager object
-        self.motionManager = [[CMMotionManager alloc] init];
         
-        //starts accelerometer data collection
-        [self startMonitoringAcceleration];
-        
-        //sets up the gameOver display
-        [self setGameovernode];
-        
-        //sound setup
-        [self soundSetup];
-        
-        //character movement setup
-        self.moveCharLeft = [SKAction moveByX:-8 y:0 duration:0.001];
-        self.moveCharRight = [SKAction moveByX:8 y:0 duration:0.001];
+        [self loadObjects];
     }
     return self;
 }
+-(void)loadObjects {
+    //iPad UI
+    if(UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad) {
+        [self addBackground:TKScrollingSpeedPad];
+        [self addHUD:TK_HUD_OFFSET_PAD andScoreFont:TK_SCORE_PAD];
+        //sets up the gameOver display
+        [self setGameovernode:TK_GAMEOVER_FONT_PAD];
+        self.complementLabel.fontSize = 40;
+        self.pointLabel.fontSize = 40;
+    }
+    // iPhone UI
+    else {
+        [self addBackground:TKScrollingSpeedPhone];
+        [self addHUD:TK_HUD_OFFSET_IPHONE andScoreFont:TK_SCORE_PHONE];
+        //sets up the gameOver display
+        [self setGameovernode:TK_GAMEOVER_FONT_PHONE];
+        self.complementLabel.fontSize = 20;
+        self.pointLabel.fontSize = 20;
+        NSLog(@"yay!");
+    }
+    //add astronaut
+    [self addMainCharacter];
+    //initializes the motion manager object
+    self.motionManager = [[CMMotionManager alloc] init];
+    //starts accelerometer data collection
+    [self startMonitoringAcceleration];
+    
+    //sound setup
+    [self soundSetup];
+    
+    //initialize an object of gameData
+    self.gameData = [TKGameData sharedGameData];
+    
+    //character movement setup
+    self.moveCharLeft = [SKAction moveByX:-8 y:0 duration:0.001];
+    self.moveCharRight = [SKAction moveByX:8 y:0 duration:0.001];
+}
 #pragma mark - creation of the spriteNodes
-
 -(void)soundSetup
 {
     //setup background musics
@@ -160,35 +167,28 @@
     [self.backgroundMusic play];
     
 }
--(void)addBackground
+-(void)addBackground:(int)scrollingSpeed
 {
-    //initialize the scrolling background
-    NSString* imageName;
-    if(self.frame.size.height == 568)
-    {
-        imageName = @"gameBackground_A";
-    }
-    else{
-        imageName = @"gameBackground_B";
-    }
-
-    self.background = [TKScrollingNode scrollingNodeWithImageNamed:imageName inContainerHeight:self.size.height];
+    self.background = [TKScrollingNode scrollingNodeWithImageNamed:@"gameBackground" inContainerHeight:self.size.height];
     self.background.name = @"background";
     //set the speed of scrolling
-    [self.background setScrollingSpeed:TKScrollingSpeed];
+    [self.background setScrollingSpeed:scrollingSpeed];
     
     //add background as a child to gameplay scene
     [self addChild:self.background];
 }
--(void)addHUD
+-(void)addHUD:(int)hud_offset andScoreFont:(int)scoreFont
 {
-    self.hud = [TKHudNode hudAtPosition:CGPointMake(-self.frame.size.width / 2.0 + 20, -self.frame.size.height /2.0 + 20) inFrame:self.frame];
+    //CGPointMake(-self.frame.size.width / 2.0 + hud_offset
+    self.hud = [TKHudNode hudAtPosition:CGPointMake(-self.frame.size.width/2.0, -self.frame.size.height /2.0 + hud_offset) inFrame:self.frame andScoreFont:scoreFont andOffset:hud_offset];
+    NSLog(@"addHUD: middle frame x is %f", CGRectGetMidX(self.frame));
+    NSLog(@"addHUD: frame position x is %f", self.frame.size.width);
     [self addChild:self.hud];
 }
--(void )setGameovernode
+-(void )setGameovernode:(int)fontSize
 {
     //initializes the gameOverNode at the beginning of the game so there's no lag later on
-    self.gameOverNode = [TKGameOverNode gameOverAtPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame) + self.frame.size.height / 4.0)];
+    self.gameOverNode = [TKGameOverNode gameOverAtPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame) + self.frame.size.height / 4.0) andFontSize:fontSize];
 }
 
 -(void) addMeteorites
@@ -662,7 +662,7 @@
 }
 -(void)performAnimationLegendary:(CGPoint)position
 {
-    self.complementLabel = [SKLabelNode labelNodeWithFontNamed:@"Futura-CondensedExtraBold"];
+   // self.complementLabel = [SKLabelNode labelNodeWithFontNamed:@"Futura-CondensedExtraBold"];
     self.complementLabel.text = @"Legendary!";
     self.complementLabel.position = position;
     self.complementLabel.fontColor = [SKColor blueColor];
@@ -670,7 +670,7 @@
 }
 -(void)performAnimationUltimateLegend:(CGPoint)position
 {
-    self.complementLabel = [SKLabelNode labelNodeWithFontNamed:@"Futura-CondensedExtraBold"];
+   // self.complementLabel = [SKLabelNode labelNodeWithFontNamed:@"Futura-CondensedExtraBold"];
     self.complementLabel.text = @"Ultimate Legend!";
     self.complementLabel.position = position;
     self.complementLabel.fontColor = [SKColor yellowColor];
@@ -682,7 +682,6 @@
     self.pointLabel = [SKLabelNode labelNodeWithFontNamed:@"Futura-CondensedExtraBold"];
     self.pointLabel.text = @"+1";
     self.pointLabel.fontColor = [UIColor orangeColor];
-    self.pointLabel.fontSize = 20;
     self.pointLabel.position = position;
     [self showPoint];
 }

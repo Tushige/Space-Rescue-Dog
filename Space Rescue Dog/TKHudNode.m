@@ -15,22 +15,21 @@
 @end
 @implementation TKHudNode
 
-+(instancetype)hudAtPosition:(CGPoint)position inFrame:(CGRect)frame
++(instancetype)hudAtPosition:(CGPoint)position inFrame:(CGRect)frame andScoreFont:(int)scoreFont andOffset:(int)offset
 {
     TKHudNode *hud = [self node];
     hud.name = @"hud";
     //set HUD position
     hud.position = position;
-    
     //z index - how far or near the node is placed from the user; higher = closer
     hud.zPosition = 11;
     
-    //initialize cathead
+    //initialize doghead
     SKSpriteNode *dogHead = [SKSpriteNode spriteNodeWithImageNamed:@"HUDImage"];
-    dogHead.position = CGPointMake(0,0);
+    dogHead.position = CGPointMake(offset,0);
     
     dogHead.zPosition = 12;
-    //add catHead as hud's child node
+    //add dogHead as hud's child node
     [hud addChild:dogHead];
     
     //sets the lives = (constant)TKMaxLives;
@@ -51,12 +50,12 @@
         //the first lifeBar positioning
         if(lastLifeBar == nil)
         {
-            lifeBar.position = CGPointMake(dogHead.position.x+30, dogHead.position.y);
+            lifeBar.position = CGPointMake(dogHead.position.x + dogHead.frame.size.width/2.0 +lifeBar.frame.size.width, dogHead.position.y);
         }
         else
         {
             //subsequent lifeBar positioning
-            lifeBar.position = CGPointMake(lastLifeBar.position.x+10, lastLifeBar.position.y);
+            lifeBar.position = CGPointMake(lastLifeBar.position.x+lifeBar.frame.size.width, lastLifeBar.position.y);
         }
         //update lastLifeBar
         lastLifeBar = lifeBar;
@@ -69,9 +68,10 @@
     hud.scoreLabel.name = @"Score";
     hud.scoreLabel.zPosition = 13;
     hud.scoreLabel.text = @"0";
-    hud.scoreLabel.fontSize = 24;
+    hud.scoreLabel.fontSize = scoreFont;
     hud.scoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
-    hud.scoreLabel.position = CGPointMake(140, lastLifeBar.position.y - lastLifeBar.frame.size.height / 2.0);
+    NSLog(@"hud origin x is %f", hud.scoreLabel.frame.origin.x);
+    hud.scoreLabel.position = CGPointMake(frame.size.width/2.0, lastLifeBar.position.y - lastLifeBar.frame.size.height / 2.0);
     [hud addChild:hud.scoreLabel];
     
     return hud;
