@@ -1,18 +1,14 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
+      "idiom" : "ipad",
       "scale" : "1x",
-      "filename" : "Icon-76.png"
+      "filename" : "AppIcon76x76.png"
     },
     {
-      "idiom" : "universal",
+      "idiom" : "ipad",
       "scale" : "2x",
-      "filename" : "Icon-76@2x.png"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "AppIcon76x76@2x.png"
     }
   ],
   "info" : {
