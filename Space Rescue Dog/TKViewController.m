@@ -66,6 +66,7 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+    NSLog(@"received memory warning");
     // Release any cached data, images, etc that aren't in use.
 }
 -(void)authenticateLocalPlayer

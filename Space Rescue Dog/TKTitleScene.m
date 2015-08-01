@@ -23,27 +23,35 @@
 @property(nonatomic)TKLogosNode* playLogo;
 @property(nonatomic)TKLogosNode* rankLogo;
 @property(nonatomic)TKCollectablesNode *titleCollectable;
+@property(nonatomic)double xscale;
 
 @end
 @implementation TKTitleScene
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
+        
         self.background = [SKSpriteNode spriteNodeWithImageNamed:@"titleBackground"];
         self.anchorPoint = CGPointMake(0.5,0.5);
-        //set background image position
         self.background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
-        [self addChild:self.background];
         
+        // IPAD
         if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            _xscale = 1;
+            [self addChild:self.background];
             [self showPlayLabel:TK_LABEL_PAD];
             [self showBestScore:TK_TITLE_PAD];
             [self showRankLabel:TK_LABEL_PAD];
         }
+        //iPhone
         else {
-            [self showPlayLabel:TK_LABEL_PHONE];
-            [self showBestScore:TK_TITLE_PHONE];
-            [self showRankLabel:TK_LABEL_PHONE];
+            _xscale = self.frame.size.width/TK_img_x;
+            self.background.xScale = _xscale;
+            self.background.yScale = self.frame.size.height / TK_img_y;
+            [self addChild:self.background];
+            [self showPlayLabel:TK_LABEL_PHONE*_xscale];
+            [self showBestScore:TK_TITLE_PHONE*_xscale];
+            [self showRankLabel:TK_LABEL_PHONE*_xscale];
         }
         [self soundSetup];
         [self addAstronaut];
@@ -53,14 +61,18 @@
 -(void)showPlayLabel:(int)fontSize
 {
     self.playLogo = [TKLogosNode LogoAtPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
-    [self.playLogo addLabel:CGPointMake(CGRectGetMidX(self.frame), self.playLogo.position.y + self.playLogo.frame.size.height / 12.0) andName:@"play" andText:@"PLAY" andFontSize:fontSize];
+    self.playLogo.xScale = _xscale;
+    self.playLogo.yScale = _xscale;
+    [self.playLogo addLabel:CGPointMake(0, self.playLogo.position.y + self.playLogo.frame.size.height / (fontSize/6)) andName:@"play" andText:@"PLAY" andFontSize:fontSize];
 
     [self addChild:self.playLogo];
 }
--(void)showRankLabel:(int)fontSize
+-(void)showRankLabel:(double)fontSize
 {
-    self.rankLogo = [TKLogosNode LogoAtPosition:CGPointMake(CGRectGetMidX(self.frame), self.playLogo.position.y - self.playLogo.frame.size.height / 0.5)];
-    [self.rankLogo addLabel:CGPointMake(CGRectGetMidX(self.frame), - CGRectGetMidY(self.frame) + self.rankLogo.frame.size.height/12.0) andName:@"rank" andText:@"RANK" andFontSize:fontSize];
+    self.rankLogo = [TKLogosNode LogoAtPosition:CGPointMake(CGRectGetMidX(self.frame), self.playLogo.position.y - self.playLogo.frame.size.height *2)];
+    self.rankLogo.xScale = _xscale;
+    self.rankLogo.yScale = _xscale;
+    [self.rankLogo addLabel:CGPointMake(CGRectGetMidX(self.frame), - CGRectGetMidY(self.frame) + self.rankLogo.frame.size.height/(fontSize/6)) andName:@"rank" andText:@"RANK" andFontSize:fontSize];
     [self addChild:self.rankLogo];
 }
 
@@ -77,11 +89,11 @@
 -(void)addAstronaut
 {
     self.titleCollectable = [TKCollectablesNode collectableInFrame:self.frame];
-    [self addChild:self.titleCollectable];
     self.titleCollectable.physicsBody.dynamic = NO;
-    SKAction *scaleUp = [SKAction scaleTo:2.0 duration:1];
+    SKAction *scaleUp = [SKAction scaleTo:(2.0*_xscale) duration:1];
     self.titleCollectable.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame) - self.frame.size.height / 3.0);
     [self.titleCollectable runAction:scaleUp];
+    [self addChild:self.titleCollectable];
 }
 -(void)didMoveToView:(SKView *)view
 {
@@ -98,9 +110,6 @@
     {
         [self runAction:self.sceneSwitchSFX completion:^{
             SKAction *terminate = [SKAction runBlock:^{
-                //replace 'play' label with 'loading' label
-                //[self.playLogo.label setText:@"Loading..."];
-                
                 [self.backgroundMusic stop];
                 
                 //create an instance of our gameplay scene
@@ -155,7 +164,7 @@
     {
         if(node != self.background)
         {
-            [node removeFromParent];  
+            [node removeFromParent];
         }
     }
 }

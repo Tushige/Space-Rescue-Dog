@@ -14,40 +14,18 @@
 
 @end
 @implementation TKScrollingNode
-/*
-+ (id) scrollingNodeWithImageNamed:(NSString *)name inContainerHeight:(float) height
-{
-    //UIImage * image = [UIImage imageNamed:name];
-    SKSpriteNode *image = [SKSpriteNode spriteNodeWithImageNamed:name];
-    
-    TKScrollingNode * realNode = [TKScrollingNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeMake(image.size.width, height)];
-    realNode.scrollingSpeed = 100;
-    realNode.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:realNode.frame];
-    float total = 0;
-    
-    while(total<(height + image.size.height)){
-        realNode.child = [SKSpriteNode spriteNodeWithImageNamed:name];
-        [realNode.child setAnchorPoint:CGPointMake(0.5, 0.5)];
-        [realNode.child setPosition:CGPointMake(0, total)];
-        [realNode addChild:realNode.child];
-        total+=realNode.child.size.height;
-    }
-    
-    return realNode;
-}*/
 
-+ (id) scrollingNodeWithImageNamed:(NSString *)name inContainerHeight:(float) height
++ (id) scrollingNodeWithImageNamed:(NSString *)name inFrame:(CGRect)frame
 {
-    //UIImage * image = [UIImage imageNamed:name];
+    int height = frame.size.height;
     SKSpriteNode *image = [SKSpriteNode spriteNodeWithImageNamed:name];
+    TKScrollingNode * realNode = [TKScrollingNode spriteNodeWithColor:[UIColor clearColor] size:image.size];
     
-    TKScrollingNode * realNode = [TKScrollingNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeMake(image.size.width, height)];
-    
-    realNode.scrollingSpeed = 100;
+    //realNode.scrollingSpeed = 100;
     realNode.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:realNode.frame];
     float total = 0;
     
-    while(total<(height + image.size.height)){
+    while(total<(height + height)){
         realNode.child = [SKSpriteNode spriteNodeWithImageNamed:name];
         [realNode.child setAnchorPoint:CGPointMake(0.5, 0.5)];
         [realNode.child setPosition:CGPointMake(0, total)];

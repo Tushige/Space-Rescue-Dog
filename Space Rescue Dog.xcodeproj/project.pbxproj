@@ -7,17 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		19ACE0B81B1FA9780085486F /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19ACE0B71B1FA9780085486F /* Launch Screen.xib */; };
+		191E5B141B3DCD28003E16E6 /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 191E5B131B3DCD28003E16E6 /* sprites.atlas */; };
+		19367D721B641AA300AEC25F /* titleBackground@3x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 19367D711B641AA300AEC25F /* titleBackground@3x~iphone.png */; };
+		19367D781B657E5E00AEC25F /* gameBackground@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 19367D771B657E5E00AEC25F /* gameBackground@2x~ipad.png */; };
+		19367D7A1B6580F800AEC25F /* gameBackground@3x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 19367D791B6580F800AEC25F /* gameBackground@3x~iphone.png */; };
+		19367D7C1B65819700AEC25F /* titleBackground@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 19367D7B1B65819700AEC25F /* titleBackground@2x~ipad.png */; };
 		19E1DA1B1B1EB5F00002312B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB162BDD19953896002E2095 /* Main.storyboard */; };
-		19FA6F1F1B229C5F00B9FA5B /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 19FA6F1E1B229C5E00B9FA5B /* sprites.atlas */; };
-		19FA6F251B23727200B9FA5B /* gameBackground@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 19FA6F241B23727200B9FA5B /* gameBackground@2x~ipad.png */; };
-		19FA6F271B2376C300B9FA5B /* titleBackground@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 19FA6F261B2376C300B9FA5B /* titleBackground@2x~ipad.png */; };
-		19FD20771B24F8190017C818 /* gameBackground-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 19FD20711B24F8190017C818 /* gameBackground-568h@2x~iphone.png */; };
-		19FD20781B24F8190017C818 /* gameBackground@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 19FD20721B24F8190017C818 /* gameBackground@2x~iphone.png */; };
-		19FD20791B24F8190017C818 /* gameBackground~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 19FD20731B24F8190017C818 /* gameBackground~ipad.png */; };
-		19FD207A1B24F8190017C818 /* titleBackground-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 19FD20741B24F8190017C818 /* titleBackground-568h@2x~iphone.png */; };
-		19FD207B1B24F8190017C818 /* titleBackground@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 19FD20751B24F8190017C818 /* titleBackground@2x~iphone.png */; };
-		19FD207C1B24F8190017C818 /* titleBackground~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 19FD20761B24F8190017C818 /* titleBackground~ipad.png */; };
 		BB162BCA19953896002E2095 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB162BC919953896002E2095 /* Foundation.framework */; };
 		BB162BCC19953896002E2095 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB162BCB19953896002E2095 /* CoreGraphics.framework */; };
 		BB162BCE19953896002E2095 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB162BCD19953896002E2095 /* UIKit.framework */; };
@@ -71,16 +66,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		19ACE0B71B1FA9780085486F /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
-		19FA6F1E1B229C5E00B9FA5B /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
-		19FA6F241B23727200B9FA5B /* gameBackground@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gameBackground@2x~ipad.png"; sourceTree = "<group>"; };
-		19FA6F261B2376C300B9FA5B /* titleBackground@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "titleBackground@2x~ipad.png"; sourceTree = "<group>"; };
-		19FD20711B24F8190017C818 /* gameBackground-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gameBackground-568h@2x~iphone.png"; path = "sprites.atlas/gameBackground-568h@2x~iphone.png"; sourceTree = "<group>"; };
-		19FD20721B24F8190017C818 /* gameBackground@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gameBackground@2x~iphone.png"; path = "sprites.atlas/gameBackground@2x~iphone.png"; sourceTree = "<group>"; };
-		19FD20731B24F8190017C818 /* gameBackground~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gameBackground~ipad.png"; path = "sprites.atlas/gameBackground~ipad.png"; sourceTree = "<group>"; };
-		19FD20741B24F8190017C818 /* titleBackground-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "titleBackground-568h@2x~iphone.png"; path = "sprites.atlas/titleBackground-568h@2x~iphone.png"; sourceTree = "<group>"; };
-		19FD20751B24F8190017C818 /* titleBackground@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "titleBackground@2x~iphone.png"; path = "sprites.atlas/titleBackground@2x~iphone.png"; sourceTree = "<group>"; };
-		19FD20761B24F8190017C818 /* titleBackground~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "titleBackground~ipad.png"; path = "sprites.atlas/titleBackground~ipad.png"; sourceTree = "<group>"; };
+		191E5B131B3DCD28003E16E6 /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
+		19367D711B641AA300AEC25F /* titleBackground@3x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "titleBackground@3x~iphone.png"; sourceTree = "<group>"; };
+		19367D771B657E5E00AEC25F /* gameBackground@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gameBackground@2x~ipad.png"; sourceTree = "<group>"; };
+		19367D791B6580F800AEC25F /* gameBackground@3x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gameBackground@3x~iphone.png"; sourceTree = "<group>"; };
+		19367D7B1B65819700AEC25F /* titleBackground@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "titleBackground@2x~ipad.png"; sourceTree = "<group>"; };
 		BB162BC619953896002E2095 /* Space Rescue Dog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Rescue Dog.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB162BC919953896002E2095 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BB162BCB19953896002E2095 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -206,15 +196,11 @@
 		BB162BD119953896002E2095 /* Space Rescue Dog */ = {
 			isa = PBXGroup;
 			children = (
-				19FA6F1E1B229C5E00B9FA5B /* sprites.atlas */,
-				19FA6F241B23727200B9FA5B /* gameBackground@2x~ipad.png */,
-				19FA6F261B2376C300B9FA5B /* titleBackground@2x~ipad.png */,
-				19FD20711B24F8190017C818 /* gameBackground-568h@2x~iphone.png */,
-				19FD20721B24F8190017C818 /* gameBackground@2x~iphone.png */,
-				19FD20731B24F8190017C818 /* gameBackground~ipad.png */,
-				19FD20741B24F8190017C818 /* titleBackground-568h@2x~iphone.png */,
-				19FD20751B24F8190017C818 /* titleBackground@2x~iphone.png */,
-				19FD20761B24F8190017C818 /* titleBackground~ipad.png */,
+				19367D771B657E5E00AEC25F /* gameBackground@2x~ipad.png */,
+				19367D7B1B65819700AEC25F /* titleBackground@2x~ipad.png */,
+				19367D791B6580F800AEC25F /* gameBackground@3x~iphone.png */,
+				19367D711B641AA300AEC25F /* titleBackground@3x~iphone.png */,
+				191E5B131B3DCD28003E16E6 /* sprites.atlas */,
 				BB298DCC19A3C12E004C1B5F /* Game Center */,
 				BB162C06199539AF002E2095 /* scenes */,
 				BB162C2C19953BE7002E2095 /* Game over */,
@@ -228,7 +214,6 @@
 				BB162BDD19953896002E2095 /* Main.storyboard */,
 				BB162BE819953896002E2095 /* Images.xcassets */,
 				BB162BD219953896002E2095 /* Supporting Files */,
-				19ACE0B71B1FA9780085486F /* Launch Screen.xib */,
 			);
 			path = "Space Rescue Dog";
 			sourceTree = "<group>";
@@ -456,30 +441,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19367D7A1B6580F800AEC25F /* gameBackground@3x~iphone.png in Resources */,
+				19367D781B657E5E00AEC25F /* gameBackground@2x~ipad.png in Resources */,
 				BB162CBC1999AD81002E2095 /* Explode.caf in Resources */,
-				19FD207C1B24F8190017C818 /* titleBackground~ipad.png in Resources */,
 				BB162CB71999ABE7002E2095 /* sceneSwitch.caf in Resources */,
 				BB162CB81999ABE7002E2095 /* GameoverSound.caf in Resources */,
 				BB162CB91999ABE7002E2095 /* takeOff.caf in Resources */,
-				19FD207B1B24F8190017C818 /* titleBackground@2x~iphone.png in Resources */,
-				19FD20781B24F8190017C818 /* gameBackground@2x~iphone.png in Resources */,
 				BB162CBA1999ABE7002E2095 /* collectSound.caf in Resources */,
 				BB162C4219953C3F002E2095 /* ExplosionFire.sks in Resources */,
 				19E1DA1B1B1EB5F00002312B /* Main.storyboard in Resources */,
+				19367D721B641AA300AEC25F /* titleBackground@3x~iphone.png in Resources */,
 				BB162BD619953896002E2095 /* InfoPlist.strings in Resources */,
 				BB162C4419953C3F002E2095 /* Smoke.sks in Resources */,
+				191E5B141B3DCD28003E16E6 /* sprites.atlas in Resources */,
 				BB162C4519953C3F002E2095 /* Spark.sks in Resources */,
-				19FA6F1F1B229C5F00B9FA5B /* sprites.atlas in Resources */,
-				19FD207A1B24F8190017C818 /* titleBackground-568h@2x~iphone.png in Resources */,
-				19FD20791B24F8190017C818 /* gameBackground~ipad.png in Resources */,
 				BB162BE919953896002E2095 /* Images.xcassets in Resources */,
+				19367D7C1B65819700AEC25F /* titleBackground@2x~ipad.png in Resources */,
 				BB162C3A19953C1A002E2095 /* Intro.mp3 in Resources */,
-				19ACE0B81B1FA9780085486F /* Launch Screen.xib in Resources */,
-				19FA6F271B2376C300B9FA5B /* titleBackground@2x~ipad.png in Resources */,
-				19FD20771B24F8190017C818 /* gameBackground-568h@2x~iphone.png in Resources */,
 				BB162C3919953C1A002E2095 /* Gameplay.mp3 in Resources */,
 				BB162C4319953C3F002E2095 /* Smoke.png in Resources */,
-				19FA6F251B23727200B9FA5B /* gameBackground@2x~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,12 +619,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Tushig Ochirkhuyag (9BT558E2W9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Space Rescue Dog/Space Rescue Dog-Prefix.pch";
 				INFOPLIST_FILE = "Space Rescue Dog/Space Rescue Dog-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1398cf94-d8b5-444f-9206-f67babda3373";
+				PROVISIONING_PROFILE = "d3c0beb1-aac0-4589-8a10-14bae2120671";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -657,13 +638,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Tushig Ochirkhuyag (RAPZRR6X8A)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Space Rescue Dog/Space Rescue Dog-Prefix.pch";
 				INFOPLIST_FILE = "Space Rescue Dog/Space Rescue Dog-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1398cf94-d8b5-444f-9206-f67babda3373";
+				PROVISIONING_PROFILE = "d3c0beb1-aac0-4589-8a10-14bae2120671";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;

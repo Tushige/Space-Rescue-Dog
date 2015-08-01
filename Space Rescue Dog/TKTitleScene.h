@@ -13,6 +13,4 @@
 
 @interface TKTitleScene : SKScene
 
-
-
 @end

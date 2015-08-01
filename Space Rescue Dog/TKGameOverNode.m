@@ -8,8 +8,7 @@
 
 #import "TKGameOverNode.h"
 #import "TKHudNode.h"
-#import "TKLogosNode.h"
-
+#import "TKUtil.h"
 @interface TKGameOverNode  ()
 
 @property(nonatomic)NSString* scoreText;
@@ -21,7 +20,6 @@
 +(instancetype)gameOverAtPosition:(CGPoint)position andFontSize:(int)fontSize
 {
     TKGameOverNode *gameOver = [self node];
-    
     SKLabelNode *gameOverLabel = [SKLabelNode labelNodeWithFontNamed:@"Futura-CondensedExtrabold"];
     gameOverLabel.name = @"GameOver" ;
     gameOverLabel.text  = @"Game Over";
@@ -29,17 +27,15 @@
     gameOverLabel.fontSize = fontSize;
     gameOverLabel.position = position;
     gameOver.labelSize = fontSize;
-    
     [gameOver addChild:gameOverLabel];
     [gameOver showRank];
-    
     return gameOver;
 }
 -(void)showRank
 {
-    TKLogosNode *rankLogo = [TKLogosNode LogoAtPosition:CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame) - 150)];
-    [rankLogo addLabel:CGPointMake(CGRectGetMidX(self.frame), - CGRectGetMidY(self.frame) +rankLogo.frame.size.height/12.0) andName:@"rank" andText:@"RANK" andFontSize:self.labelSize-16];
-    [self addChild:rankLogo];
+    _rankLogo = [TKLogosNode LogoAtPosition:CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame) - 150)];
+    [_rankLogo addLabel:CGPointMake(0, _rankLogo.frame.size.height/12) andName:@"rank" andText:@"RANK" andFontSize:41];
+    [self addChild:_rankLogo];
 }
 // called when game is over
 -(void)performAnimation:(NSInteger)score andBestScore:(NSInteger)bestScore

@@ -7,9 +7,10 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "TKLogosNode.h"
 
 @interface TKGameOverNode : SKNode
-
+@property(nonatomic) TKLogosNode * rankLogo;
 +(instancetype)gameOverAtPosition:(CGPoint)position andFontSize:(int)fontSize;
 -(void)performAnimation:(NSInteger)score andBestScore:(NSInteger)bestScore;
 

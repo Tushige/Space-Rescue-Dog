@@ -12,7 +12,7 @@
 
 @property (nonatomic) CGFloat scrollingSpeed;
 @property(nonatomic)SKSpriteNode * child;
-+ (id) scrollingNodeWithImageNamed:(NSString *)name inContainerHeight:(float) height;
++ (id) scrollingNodeWithImageNamed:(NSString *)name inFrame:(CGRect)frame;
 - (void) update:(NSTimeInterval)currentTime;
 
 @end

@@ -27,6 +27,7 @@
 @property(nonatomic)NSTimeInterval lastUpdateTimeInterval;
 @property(nonatomic)NSTimeInterval timeSinceLastMeteorite;
 @property(nonatomic)NSTimeInterval timeSinceLastCollectable;
+@property(nonatomic)NSTimeInterval lastUpdateAI;
 @property(nonatomic)NSTimeInterval totalGameTime;
 
 @property(nonatomic)TKScrollingNode *background;
@@ -38,10 +39,13 @@
 @property(nonatomic)TKGameOverNode *gameOverNode;
 @property(nonatomic)TKGameData *gameData;
 
-@property(nonatomic)NSInteger meteoriteScrollingDuration;
+@property(nonatomic)double meteoriteScrollingDuration;
 @property(nonatomic)NSInteger numberOfCollectablesCollected;
 @property(nonatomic)NSInteger bestScore;
-
+@property(nonatomic)NSInteger explosion_xOffset;
+@property(nonatomic)NSInteger explosion_yOffset;
+@property(nonatomic)double xFactor;
+@property(nonatomic)double yFactor;
 @property(nonatomic)BOOL doneCharacterSetup;
 @property(nonatomic)BOOL doneCharacterDestruction;
 @property(nonatomic)BOOL gameOver;
@@ -57,8 +61,10 @@
 @property(nonatomic)SKLabelNode* pointLabel;
 
 @property(nonatomic)SKAction *restartAction;
-@property(nonatomic)SKAction* changeDog;
-@property(nonatomic)SKTexture* updateTexture;
+
+@property(nonatomic)SKTexture* dogLeft;
+@property(nonatomic)SKTexture* dogRight;
+@property(nonatomic)SKTexture* dogNormal;
 
 @property(nonatomic)SKAction *takeOffSFX;
 @property(nonatomic)SKAction *collectSFX;
@@ -74,15 +80,20 @@
 
 @implementation TKGameplayScene
 
+/*GLOBAL VARIABLES*/
+CGSize dogLeft_size;
+CGSize dogRight_size;
+CGSize dogNormal_size;
+
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size])
     {
         //property initialization
-        self.lastUpdateTimeInterval = 0;
+        _lastUpdateTimeInterval = 0;
+        self.lastUpdateAI = 0;
         self.totalGameTime = 0;
         self.timeSinceLastMeteorite = 0;
         self.timeSinceLastCollectable = 0;
-        self.meteoriteScrollingDuration = TKMeteoriteMovementDuration;
         self.numberOfCollectablesCollected = 0;
         self.gameOverDisplay = NO;
         self.doneCharacterDestruction = NO;
@@ -109,30 +120,50 @@
     return self;
 }
 -(void)loadObjects {
+    int speed;
+    
     //iPad UI
     if(UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad) {
+        _xFactor = 1;
+        _yFactor = 1;
+        _explosion_xOffset = self.frame.size.width/2.0;
+        _explosion_yOffset = self.frame.size.height/2.0;
+        self.meteoriteScrollingDuration = TKMeteoriteMovementDurationPAD;
         [self addBackground:TKScrollingSpeedPad];
         [self addHUD:TK_HUD_OFFSET_PAD andScoreFont:TK_SCORE_PAD];
         //sets up the gameOver display
         [self setGameovernode:TK_GAMEOVER_FONT_PAD];
-        self.complementLabel.fontSize = 40;
-        self.pointLabel.fontSize = 40;
+        self.complementLabel.fontSize = TK_POINT_PAD;
+        self.pointLabel.fontSize = TK_POINT_PAD;
+        speed = TK_DOG_SPEED_PAD;
     }
     // iPhone UI
     else {
+        _xFactor = self.frame.size.width / TK_img_x;
+        _yFactor = self.frame.size.height / TK_img_y;
+        _explosion_xOffset = 0;
+        _explosion_yOffset = 0;
+        self.meteoriteScrollingDuration = TKMeteoriteMovementDurationPhone;
         [self addBackground:TKScrollingSpeedPhone];
         [self addHUD:TK_HUD_OFFSET_IPHONE andScoreFont:TK_SCORE_PHONE];
         //sets up the gameOver display
-        [self setGameovernode:TK_GAMEOVER_FONT_PHONE];
-        self.complementLabel.fontSize = 20;
-        self.pointLabel.fontSize = 20;
-        NSLog(@"yay!");
+        [self setGameovernode:TK_GAMEOVER_FONT_PHONE * _xFactor];
+        self.complementLabel.fontSize = TK_POINT_PHONE;
+        self.pointLabel.fontSize = TK_POINT_PHONE;
+        speed = TK_DOG_SPEED_PHONE;
     }
-    //add astronaut
+    
+    //3 types of dog images
+    _dogLeft = [SKTexture textureWithImageNamed:@"rescueDog_left"];
+    _dogRight = [SKTexture textureWithImageNamed:@"rescueDog_right"];
+    _dogNormal = [SKTexture textureWithImageNamed:@"rescueDog_normal"];
+    dogLeft_size = CGSizeMake(_dogLeft.size.width*_xFactor, _dogLeft.size.height*_xFactor);
+    dogRight_size = CGSizeMake(_dogRight.size.width*_xFactor, _dogRight.size.height*_xFactor);
+    dogNormal_size = CGSizeMake(_dogNormal.size.width*_xFactor, _dogNormal.size.height*_xFactor);
+    
     [self addMainCharacter];
     //initializes the motion manager object
     self.motionManager = [[CMMotionManager alloc] init];
-    //starts accelerometer data collection
     [self startMonitoringAcceleration];
     
     //sound setup
@@ -142,8 +173,8 @@
     self.gameData = [TKGameData sharedGameData];
     
     //character movement setup
-    self.moveCharLeft = [SKAction moveByX:-8 y:0 duration:0.001];
-    self.moveCharRight = [SKAction moveByX:8 y:0 duration:0.001];
+    self.moveCharLeft = [SKAction moveByX:-speed y:0 duration:0.001];
+    self.moveCharRight = [SKAction moveByX:speed y:0 duration:0.001];
 }
 #pragma mark - creation of the spriteNodes
 -(void)soundSetup
@@ -155,7 +186,8 @@
     //plays infinitely
     self.backgroundMusic.numberOfLoops = -1;
     [self.backgroundMusic prepareToPlay];
-
+    
+    //sound effect setup
     self.takeOffSFX = [SKAction playSoundFileNamed:@"takeOff.caf" waitForCompletion:NO];
     self.gameOverSFX = [SKAction playSoundFileNamed:@"GameoverSound.caf" waitForCompletion:NO];
     self.collectSFX = [SKAction playSoundFileNamed:@"collectSound.caf" waitForCompletion:NO];
@@ -163,41 +195,45 @@
 }
 -(void)didMoveToView:(SKView *)view
 {
-    //background music will start to play when the view appears on the screen
     [self.backgroundMusic play];
     
 }
 -(void)addBackground:(int)scrollingSpeed
 {
-    self.background = [TKScrollingNode scrollingNodeWithImageNamed:@"gameBackground" inContainerHeight:self.size.height];
+    self.background = [TKScrollingNode scrollingNodeWithImageNamed:@"gameBackground" inFrame:self.frame];
+    self.background.xScale = _xFactor;
+    self.background.yScale = _yFactor;
+    //adjust initial speed of meteorites based on device type
+    self.meteoriteScrollingDuration = (double)(self.meteoriteScrollingDuration * _yFactor);
     self.background.name = @"background";
     //set the speed of scrolling
     [self.background setScrollingSpeed:scrollingSpeed];
-    
-    //add background as a child to gameplay scene
     [self addChild:self.background];
 }
 -(void)addHUD:(int)hud_offset andScoreFont:(int)scoreFont
 {
-    //CGPointMake(-self.frame.size.width / 2.0 + hud_offset
     self.hud = [TKHudNode hudAtPosition:CGPointMake(-self.frame.size.width/2.0, -self.frame.size.height /2.0 + hud_offset) inFrame:self.frame andScoreFont:scoreFont andOffset:hud_offset];
-    NSLog(@"addHUD: middle frame x is %f", CGRectGetMidX(self.frame));
-    NSLog(@"addHUD: frame position x is %f", self.frame.size.width);
     [self addChild:self.hud];
 }
 -(void )setGameovernode:(int)fontSize
 {
     //initializes the gameOverNode at the beginning of the game so there's no lag later on
     self.gameOverNode = [TKGameOverNode gameOverAtPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame) + self.frame.size.height / 4.0) andFontSize:fontSize];
+    self.gameOverNode.rankLogo.xScale = _xFactor;
+    self.gameOverNode.rankLogo.yScale = _xFactor;
+    self.gameOverNode.rankLogo.label.fontSize *= _xFactor;
 }
 
 -(void) addMeteorites
 {
+    // select between 2 different meteorites
     NSInteger randomNumber = [TKUtil randomWithMin:0 max:2];
     self.meteorite = [TKMeteoritesNode meteoriteInFrame:self.frame andType:randomNumber andScrollingDuration:self.meteoriteScrollingDuration];
-   // self.meteorite.hidden = NO;
+    self.meteorite.xScale = _xFactor;
+    self.meteorite.yScale = _xFactor;
     self.meteorite.zPosition = 20;
     [self addChild:self.meteorite];
+    //randomize destination coordinates
     NSInteger randomX = [TKUtil randomWithMin:-self.frame.size.width / 2.0 max:self.frame.size.width / 2.0];
     [self.meteorite moveToPosition:CGPointMake(randomX, -self.frame.size.height)];
 }
@@ -205,10 +241,11 @@
 {
     //point on the step node
     CGPoint characterPosition = CGPointMake(0, -self.frame.size.height/2.0);
-    
     //initialize the mainCharacter object
     self.mainCharacter = [TKMainCharacterNode mainCharacterAtPosition:characterPosition andFrame:self.frame];
     self.mainCharacter.fire.position = CGPointMake(self.mainCharacter.position.x, self.mainCharacter.position.y - self.mainCharacter.size.height / 2.0);
+    self.mainCharacter.xScale = _xFactor;
+    self.mainCharacter.yScale = _xFactor;
     //add it as a child to the game play scene
     [self addChild:self.mainCharacter];
     
@@ -218,6 +255,8 @@
 -(void)addCollectable
 {
     self.collectable = [TKCollectablesNode collectableInFrame:self.frame];
+    self.collectable.xScale = _xFactor;
+    self.collectable.yScale = _xFactor;
     [self addChild:self.collectable];
     //chooses a random x coordinate as the destination point
     NSInteger randomX = [TKUtil randomWithMin:-self.frame.size.width / 2.0 max:self.frame.size.width / 2.0];
@@ -277,7 +316,8 @@
         firstBody = contact.bodyB;
         secondBody = contact.bodyA;
     }
-    collidedAt = CGPointMake(contact.contactPoint.x - self.frame.size.width/2.0, contact.contactPoint.y - self.frame.size.height/2.0);
+    //simulator version
+    collidedAt = CGPointMake(contact.contactPoint.x - _explosion_xOffset, contact.contactPoint.y - _explosion_yOffset);
     //character collides with meteorite
     if(firstBody.categoryBitMask == TKCollisionCategoryCharacter && secondBody.categoryBitMask == TKCollisionCategoryMeteorite)
     {
@@ -337,8 +377,8 @@
         [self.mainCharacter runAction:self.moveCharLeft];
         if(!self.turnedLeft)
         {
-            self.updateTexture = [SKTexture textureWithImageNamed:@"rescueDog_left"];
-            [self changeTexture];
+            self.mainCharacter.size = dogLeft_size;
+            self.mainCharacter.texture = _dogLeft;
             self.turnedLeft = YES;
             self.turnedRight = NO;
             self.noTurn = NO;
@@ -351,8 +391,8 @@
         [self.mainCharacter runAction:self.moveCharRight];
         if(!self.turnedRight)
         {
-            self.updateTexture=[SKTexture textureWithImageNamed:@"rescueDog_right"];
-            [self changeTexture];
+            self.mainCharacter.size = dogRight_size;
+            self.mainCharacter.texture = _dogRight;
             self.turnedRight = YES;
             self.turnedLeft = NO;
             self.noTurn = NO;
@@ -363,18 +403,13 @@
     {
         if(!self.noTurn)
         {
-            self.updateTexture =[SKTexture textureWithImageNamed:@"rescueDog_normal"];
-            [self changeTexture];
+            self.mainCharacter.size = dogNormal_size;
+            self.mainCharacter.texture = _dogNormal;
             self.noTurn = YES;
             self.turnedRight = NO;
             self.turnedLeft = NO;
         }
     }
-}
--(void)changeTexture
-{
-    self.changeDog = [SKAction setTexture:self.updateTexture];
-    [self.mainCharacter runAction:self.changeDog];
 }
 #pragma mark - update
 -(void)update:(NSTimeInterval)currentTime
@@ -400,6 +435,11 @@
         
         //spawns sprites according to a set of conditions
         [self spawnSprites];
+        //GAME AI setup called every 10 seconds
+        if(currentTime - self.lastUpdateAI >=7) {
+            self.lastUpdateAI = currentTime;
+            [self setupGameAI];
+        }
         
         //records the time the update took place
         self.lastUpdateTimeInterval = currentTime;
@@ -409,9 +449,6 @@
         
         //prevents the main character from going off screen
         [self keepMainCharacterOnScreen];
-       
-        //GAME AI setup
-        [self setupGameAI];
         
         //smoke follows the character
         [self followCharacter];
@@ -419,6 +456,7 @@
     //if game is over
     else if(self.gameOver)
     {
+        
         //stops acquisition of accelerometer data upon game over
         [self stopMonitoringAcceleration];
         
@@ -480,7 +518,6 @@
     [self runAction:self.takeOffSFX];
     SKAction *moveToMiddle = [SKAction moveTo:CGPointMake(0, 0) duration:1.0];
     [self.mainCharacter runAction:moveToMiddle completion:^{
-        
         //allows the obstacles and collectables to begin scrolling
         self.doneCharacterSetup = YES;
     }];
@@ -568,7 +605,6 @@
                 [node removeFromParent];
             }
         }
-        //presents the new playable scene when user requests another game
         TKGameplayScene *newScene = [TKGameplayScene sceneWithSize:self.frame.size];
         SKTransition *transition = [SKTransition fadeWithDuration:1.0];
         [self.view presentScene:newScene transition:transition];
@@ -604,15 +640,15 @@
     {
         [self performAnimationGreatJob:position];
     }
-    if(self.numberOfCollectablesCollected == 16 | self.numberOfCollectablesCollected == 40)
+    if(self.numberOfCollectablesCollected == 12 | self.numberOfCollectablesCollected == 40)
     {
         [self performAnimationAwesome:position];
     }
-    if(self.numberOfCollectablesCollected == 23 | self.numberOfCollectablesCollected == 50)
+    if(self.numberOfCollectablesCollected == 20 | self.numberOfCollectablesCollected == 50)
     {
         [self performAnimationAmazing:position];
     }
-    if(self.numberOfCollectablesCollected == 30)
+    if(self.numberOfCollectablesCollected == 30 | self.numberOfCollectablesCollected == 55)
     {
         [self performAnimationLegendary:position];
     }
@@ -681,7 +717,7 @@
 {
     self.pointLabel = [SKLabelNode labelNodeWithFontNamed:@"Futura-CondensedExtraBold"];
     self.pointLabel.text = @"+1";
-    self.pointLabel.fontColor = [UIColor orangeColor];
+    self.pointLabel.fontColor = [UIColor yellowColor];
     self.pointLabel.position = position;
     [self showPoint];
 }
@@ -713,7 +749,7 @@
 //called from the update method
 -(void)spawnSprites
 {
-    if(self.timeSinceLastMeteorite > 0.5)
+    if(self.timeSinceLastMeteorite > 0.8)
     {
         [self addMeteorites];
         self.timeSinceLastMeteorite = 0;
@@ -725,29 +761,11 @@
     }
 }
 #pragma mark - game AI setup
-//makes the game progressively harder by increasing obstacle speed
+//makes the game progressively harder by increasing obstacle speed; called every 7 seconds
 -(void)setupGameAI
 {
-    if(self.totalGameTime > 50)
-    {
-        self.meteoriteScrollingDuration = 2.8;
-    }
-    if(self.totalGameTime > 40)
-    {
-        self.meteoriteScrollingDuration = 3.0;
-    }
-    else if(self.totalGameTime > 30)
-    {
-        self.meteoriteScrollingDuration = 3.4;
-    }
-    else if(self.totalGameTime > 20)
-    {
-        self.meteoriteScrollingDuration = 3.7;
-    }
-    else if(self.totalGameTime > 10)
-    {
-        self.meteoriteScrollingDuration = 4.2;
-    }
+    self.background.scrollingSpeed = self.background.scrollingSpeed + 1;
+    self.meteoriteScrollingDuration = self.meteoriteScrollingDuration - 0.2;
 }
 
 #pragma mark - gameover main character destruction

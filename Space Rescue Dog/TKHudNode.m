@@ -70,7 +70,6 @@
     hud.scoreLabel.text = @"0";
     hud.scoreLabel.fontSize = scoreFont;
     hud.scoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
-    NSLog(@"hud origin x is %f", hud.scoreLabel.frame.origin.x);
     hud.scoreLabel.position = CGPointMake(frame.size.width/2.0, lastLifeBar.position.y - lastLifeBar.frame.size.height / 2.0);
     [hud addChild:hud.scoreLabel];
     
